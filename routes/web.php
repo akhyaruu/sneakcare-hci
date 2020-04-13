@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin_view/layout/main');
-});
+// Route::get('/', function () {
+//     return view('user_view/register_view');
+// });
+
+Route::post('/user/register', 'user\RegisterController@store');
+Route::get('/', 'user\RegisterController@index');
+
+
