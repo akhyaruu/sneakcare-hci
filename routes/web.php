@@ -19,5 +19,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/user/register', 'user\RegisterController@store');
 Route::get('/', 'user\RegisterController@index');
+Route::post('/user/login', 'user\LoginController@authenticate');
+Route::get('/login', 'user\LoginController@index');
+
+Route::get('/user/forget', 'user\LoginController@forget');
+
+Route::get('/landingpage', 'user\Page@index');
 
 

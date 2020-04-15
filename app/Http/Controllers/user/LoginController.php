@@ -5,6 +5,10 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+//--------------custom------------
+use App\User;
+use Illuminate\Support\Facades\Auth;
+
 class LoginController extends Controller
 {
     /**
@@ -14,7 +18,26 @@ class LoginController extends Controller
      */
     public function index()
     {
-        //
+        return view('user_view.login_view');
+    }
+
+    /**
+     * Membuat native autentikasi user
+     * 
+     */
+    public function authenticate(Request $request) {
+        $user = User::where('email',  $request->email)->first();
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            $request->session()->put('id',$user->id);
+            // return redirect()->intended('dashboard');
+            return redirect('/landingpage');
+        }
+    }
+    public function forget(Request $request) {
+        $request->session()->flush();
+        return redirect('/');
     }
 
     /**
