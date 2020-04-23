@@ -30,7 +30,7 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            $request->session()->put('id',$user->id);
+            $request->session()->put('nama',$user->nama);
             // return redirect()->intended('dashboard');
             return redirect('/landingpage');
         }

@@ -25,5 +25,7 @@ Route::get('/login', 'user\LoginController@index');
 Route::get('/user/forget', 'user\LoginController@forget');
 
 Route::get('/landingpage', 'user\Page@index');
+Route::view('/lihat' ,'user_view/landing_page');
+Route::view('/lihat1' ,'admin_view/layout/main');
 
 
