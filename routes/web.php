@@ -17,15 +17,22 @@ use Illuminate\Support\Facades\Route;
 //     return view('user_view/register_view');
 // });
 
+
+//--------------LOGIN dan REGISTER 
+Route::get('/register', 'user\RegisterController@index');
 Route::post('/user/register', 'user\RegisterController@store');
-Route::get('/', 'user\RegisterController@index');
-Route::post('/user/login', 'user\LoginController@authenticate');
+
 Route::get('/login', 'user\LoginController@index');
+Route::post('/user/login', 'user\LoginController@authenticate');
+Route::get('/user/forget', 'user\LoginController@forgetSession');
 
-Route::get('/user/forget', 'user\LoginController@forget');
 
-Route::get('/landingpage', 'user\Page@index');
-Route::view('/lihat' ,'user_view/landing_page');
-Route::view('/lihat1' ,'admin_view/layout/main');
+
+// Route::get('/landingpage', 'user\Page@index');
+//--------------DEVELOPMENT ONLY
+// Route::view('/lihat' ,'user_view/loginbaru');
+// Route::view('/lihat2' ,'user_view/registerbaru');
+// Route::view('/lihat1' ,'admin_view/layout/main');
+Route::view('/lihat1' ,'user_view/landing_page');
 
 

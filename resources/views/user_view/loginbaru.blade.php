@@ -1,72 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link rel="stylesheet" href="{{ asset('dist/frontend/css/bootstrap.css') }}">
-    <!-- Font Awesome -->
+@extends('user_view.layout.main')
+
+
+@section('customeheader')
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('dist/backend/plugins/fontawesome-free/css/all.min.css') }}">
-   <title>Masuk akun - Sneakcare</title>
-</head>
-<body>
-   <div class="container">
-      <nav class="navbar navbar-default">
-      <div  class="">
-         <img class="img-circle" src="{{ asset('dist/frontend/img/logo.png') }}" width="220px">
-      </div>
-      </nav>
-      <br>
-      <h4 class="text-center">Welcome to SNEAKCARE</h4>
-      <br>
-      <form>
-      <div class="form-group">
-         <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text"><i class="far fa-envelope"></i></div>
-          </div>
-          <input type="text" name="" class="form-control" placeholder="Your E-mail">   
-        </div>       
-      </div>
-        <div class="form-group">
+  <title>Masuk akun - Sneakcare</title>
+@endsection
 
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text"><i class="far fa-unlock-alt"></i></div>
-            </div>
-              <input type="password" name="" class="form-control" placeholder="Password">
-            </div>
-          </div>
 
-        <button  type="submit" class="btn btn-primary">MASUK</button>
-        </form>
-        <br>
-        <h6 class="text-center">ATAU</h6>
-        <br>
+@section('content')
 
-        <div class="Media">
-                <form class="form-group">
-
-                  <div class="row">
-
-                    <div class="input-group-prepend">
-                      <div class="input-group-text"><i class="fab fa-google"></i></div>
-                    </div>
-
-                    <div class="col-lg-5">
-                      <input type="text" name="" class="form-control" placeholder="Login with Google">
-                    </div>
-
-                    <div class="input-group-prepend">
-                      <div class="input-group-text"><i class="fab fa-facebook-f"></i></div>
-                    </div>
-
-                    <div class="col-lg-5">
-                      <input type="text" name="" class="form-control" placeholder="Login with Facebook">
-                    </div>
-
+   <div class="container mt-5">
+      <div class="col-md-5 mx-auto">
+         <h4 class="text-center">Masuk Akun</h4>
+         <p class="mb-5 text-center" style="color: #919191">Untuk dapat melakukan pemesanan</p>
+         <form action="{{ url('/user/login') }}" method="POST">
+            @csrf
+            <div class="form-group">
+               <div class="input-group flex-nowrap">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text"><i class="far fa-envelope"></i></span>
                   </div>
-                </form>
-        </div>
-</body>
-</html>
+                  <input name="email" type="email" class="form-control" placeholder="Alamat E-mail" required>
+               </div>       
+            </div>
+            <div class="form-group">
+               <div class="input-group flex-nowrap">
+                  <div class="input-group-prepend">
+                     <span  span class="input-group-text"><i class="fas fa-lock"></i></span>
+                  </div>
+                  <input name="password" type="password" class="form-control" placeholder="Password" required>
+               </div>
+            </div>
+            <div>
+               <label><a href="" style="text-decoration: none">tidak punya akun?</a></label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block py-3 rounded-lg mt-4">Masuk Akun Saya</button>
+         </form>
+      </div>
+   </div>
+
+@endsection

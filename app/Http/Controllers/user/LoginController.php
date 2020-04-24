@@ -18,7 +18,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('user_view.login_view');
+        return view('user_view.loginbaru');
     }
 
     /**
@@ -31,78 +31,19 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             // Authentication passed...
             $request->session()->put('nama',$user->nama);
-            // return redirect()->intended('dashboard');
-            return redirect('/landingpage');
+            return redirect('/lihat1');
         }
     }
-    public function forget(Request $request) {
-        $request->session()->flush();
-        return redirect('/');
+    public function forgetSession(Request $request) {
+        // function ini digunakan pada saat logout
+        // $request->session()->flush();
+        // return redirect('/lihat1');
+        if($request->session()->has('nama')) {
+            $request->session()->flush();
+            return redirect('/lihat1');
+        } else {
+            return redirect('/login');
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

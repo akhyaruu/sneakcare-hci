@@ -16,19 +16,13 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('user_view.register_view');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        if($request->session()->has('nama')) {
+            return view('user_view.registerbaru');
+        } else {
+            return redirect('/lihat1');
+        }
     }
 
     /**
@@ -41,10 +35,11 @@ class RegisterController extends Controller
     {
         // validasi form di sisi server
         $request->validate([
-            'nama'      => 'required',
-            'email'     => 'required',
-            'no_telp'   => 'required',
-            'password'  => 'required'
+            // 'nama'      => 'required|min:5|max:50',
+            'nama'      => ['required', 'min:5', 'max:50'],
+            'email'     => ['required', 'min:12', 'max:50'],
+            'no_telp'   => ['required', 'digits_between:11,12'],
+            'password'  => 'required|max:12'
         ]);
         $user = new User;
         $user->nama = $request->nama;
@@ -52,51 +47,7 @@ class RegisterController extends Controller
         $user->no_telp = $request->no_telp;
         $user->password = Hash::make($request->password);
         $user->save();
-        return redirect('/');
+        return redirect('/lihat1');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

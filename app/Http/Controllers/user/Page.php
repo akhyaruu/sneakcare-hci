@@ -9,10 +9,11 @@ class Page extends Controller
 {
     public function index(Request $request) {
         if($request->session()->has('nama')) {
-            echo $request->session()->get('nama');
+            // echo $request->session()->get('nama');
+            return view('user_view.loginbaru');
         } else {
             // echo 'No data in the session';
-            return redirect('/');
+            return redirect('/lihat1');
         }
     }
 }
