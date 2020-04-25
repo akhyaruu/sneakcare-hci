@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('nama', 50);	
             $table->string('email', 50);	
-            $table->char('no_telp', 12);	
+            $table->string('no_telp', 15);	
             $table->string('password', 100);	
         });
     }

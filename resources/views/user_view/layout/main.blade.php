@@ -12,8 +12,8 @@
      <!-- navbar -->
    <nav class="navbar navbar-expand-lg" style="background: #563D7C">
       <div class="container">
-         <a href="{{ url('/user/forget') }}" >My button</a>
-         <a class="navbar-brand" href="{{ '/' }}"><img src="{{ asset('dist/frontend/img/logobaru.png') }}" width="50px"></a>
+         {{-- <a href="{{ url('/user/forget') }}" >My button</a> --}}
+         <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('dist/frontend/img/logobaru.png') }}" width="50px"></a>
          <h5 class="text-white mt-1 mr-3">SNEAKCARE</h5>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             {{-- <span class="navbar-toggler-icon"></span> --}}
@@ -21,8 +21,8 @@
          </button>
          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-               <a class="nav-item btn text-white ml-md-1" href="#">Masuk</a>
-               <a class="nav-item btn text-white ml-md-1" href="#">Daftar</a>
+               <a class="nav-item btn text-white ml-md-1" href="{{ url('/login') }}">Masuk</a>
+               <a class="nav-item btn text-white ml-md-1" href="{{ url('/register') }}">Daftar</a>
                <div class="dropdown open mx-auto">
                <button class="btn dropdown-toggle ml-sm-4" style="background-color:darkturquoise;" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Order & Menu</button>
                   <div class="dropdown-menu" aria-labelledby="triggerId">

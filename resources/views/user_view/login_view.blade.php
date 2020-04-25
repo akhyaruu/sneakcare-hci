@@ -1,30 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-   <title>Masuk Akun - Sneakcare</title>
-</head>
-<body>
-   <div class="container">
-      <div class="row mx-auto">
-         <form action="/user/login" method="POST">
+@extends('user_view.layout.main')
+
+
+@section('customeheader')
+   <link rel="stylesheet" href="{{ asset('dist/frontend/fontawesome/css/all.min.css') }}">
+   <title>Masuk akun - Sneakcare</title>
+@endsection
+
+
+@section('content')
+
+   <div class="container mt-5">
+      <div class="col-md-5 mx-auto">
+         <h4 class="text-center">Masuk Akun</h4>
+         <p class="mb-5 text-center" style="color: #919191">Untuk dapat melakukan pemesanan</p>
+         <form action="{{ url('/user/login') }}" method="POST">
             @csrf
             <div class="form-group">
-              <label for="email_user">Email</label>
-              <input name="email" type="email" class="form-control" id="email_user" required>
+               <div class="input-group flex-nowrap">
+                  <div class="input-group-prepend">
+                     <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                  </div>
+                  <input name="email" type="email" class="form-control" placeholder="Alamat E-mail" required>
+               </div>       
             </div>
             <div class="form-group">
-               <label for="password_user">Password</label>
-               <input name="password" type="password" class="form-control" id="password_user" required>
+               <div class="input-group flex-nowrap">
+                  <div class="input-group-prepend">
+                     <span  span class="input-group-text"><i class="fas fa-lock"></i></span>
+                  </div>
+                  <input name="password" type="password" class="form-control" placeholder="Password" required>
+               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-
-          <a href="/user/forget" >My button</a>
+            <div>
+               <label><a href="{{ url('/register') }}" style="text-decoration: none">tidak punya akun?</a></label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block py-3 rounded-lg mt-4">Masuk Akun Saya</button>
+         </form>
       </div>
    </div>
-</body>
-</html>
+
+@endsection

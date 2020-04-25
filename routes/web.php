@@ -18,6 +18,11 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
+
+//--------------PAGE
+Route::get('/' ,'user\Page@index');
+
+
 //--------------LOGIN dan REGISTER 
 Route::get('/register', 'user\RegisterController@index');
 Route::post('/user/register', 'user\RegisterController@store');
@@ -28,11 +33,11 @@ Route::get('/user/forget', 'user\LoginController@forgetSession');
 
 
 
-// Route::get('/landingpage', 'user\Page@index');
+Route::view('/lihat', 'admin_view/layout/main');
 //--------------DEVELOPMENT ONLY
 // Route::view('/lihat' ,'user_view/loginbaru');
 // Route::view('/lihat2' ,'user_view/registerbaru');
 // Route::view('/lihat1' ,'admin_view/layout/main');
-Route::view('/lihat1' ,'user_view/landing_page');
+// Route::view('/lihat1' ,'user_view/landing_page');
 
 
