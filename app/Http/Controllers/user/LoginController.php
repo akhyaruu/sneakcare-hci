@@ -16,9 +16,16 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('user_view.login_view');
+        if($request->session()->has('nama')) {
+            $value = $request->session()->get('nama');
+            return view('user_view.login_view', compact('value'));
+        } else {
+            $value = 'none';
+            return view('user_view.login_view', compact('value'));
+        }
+        // return view('user_view.login_view');
     }
 
     /**
@@ -31,7 +38,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             // Authentication passed...
             $request->session()->put('nama',$user->nama);
-            return redirect('/lihat1');
+            return redirect('/');
         }
     }
     public function forgetSession(Request $request) {
@@ -40,7 +47,7 @@ class LoginController extends Controller
         // return redirect('/lihat1');
         if($request->session()->has('nama')) {
             $request->session()->flush();
-            return redirect('/lihat1');
+            return redirect('/');
         } else {
             return redirect('/login');
         }

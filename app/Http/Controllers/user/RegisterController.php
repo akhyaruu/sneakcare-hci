@@ -18,12 +18,12 @@ class RegisterController extends Controller
      */
     public function index(Request $request)
     {
-        // if($request->session()->has('nama')) {
-        //     return view('user_view.registerbaru');
-        // } else {
-        //     return redirect('/lihat1');
-        // }
-        return view('user_view.register_view');
+        if($request->session()->has('nama')) {
+            return view('user_view.register_view');
+        } else {
+            return redirect('/');
+        }
+        // return view('user_view.register_view');
     }
 
     /**

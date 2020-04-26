@@ -176,11 +176,11 @@
  
 
   <script>
-  $('.carousel').carousel({
-      interval: 2500,
-      keyboard: true,
-      pause: 'hover',
-      wrap: true
-    });
+  // $('.carousel').carousel({
+  //     interval: 2500,
+  //     keyboard: true,
+  //     pause: 'hover',
+  //     wrap: true
+  //   });
   </script>
 @endsection
