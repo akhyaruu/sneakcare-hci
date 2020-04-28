@@ -3,7 +3,6 @@
 
 
 @section('customeheader')
-  <link rel="stylesheet" href="{{ asset('dist/frontend/css/bootstrap.css') }}">
   <title>Sneakcare</title>
 @endsection
 
@@ -170,17 +169,18 @@
   </footer>
   <!-- Footer Akhir-->
 
-    
+  {{-- $('.carousel').carousel({
+    interval: 2500,
+    keyboard: true,
+    pause: 'hover',
+    wrap: true
+  }); --}}
 
-    
- 
-
-  <script>
-  // $('.carousel').carousel({
-  //     interval: 2500,
-  //     keyboard: true,
-  //     pause: 'hover',
-  //     wrap: true
-  //   });
-  </script>
 @endsection
+
+
+@section('custom-script')
+   <script> const session = {!! json_encode($value) !!}; </script>
+   <script src="{{ asset('dist/frontend/js/custom.js') }}"></script>
+@endsection
+

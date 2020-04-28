@@ -5,15 +5,14 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="{{ asset('dist/frontend/css/bootstrap.css') }}">
+   <link rel="stylesheet" href="{{ asset('dist/frontend/fontawesome/css/all.min.css') }}">
    <link rel="icon" href="{{ asset('dist/frontend/img/favicon.png') }}" type="image/x-icon"/>
    @yield('customeheader')
 </head>
 <body>
-     <!-- navbar -->
-   {{-- <p id="ambil">ada nilai</p> --}}
+   <!-- navbar -->
    <nav class="navbar navbar-expand-lg" style="background: #563D7C">
       <div class="container">
-         <a href="{{ url('/user/forget') }}" >My button</a>
          <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('dist/frontend/img/logobaru.png') }}" width="50px"></a>
          <h5 class="text-white mt-1 mr-3">SNEAKCARE</h5>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,11 +27,11 @@
                <div class="dropdown open mx-auto">
                <button class="btn dropdown-toggle ml-sm-4" style="background-color:darkturquoise;" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Order & Menu</button>
                   <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="triggerId">
-                     <button class="dropdown-item" href="#">Order</button>
-                     <button class="dropdown-item" href="#">Tentang kami</button>
-                     <button class="dropdown-item" href="#">Hubungi kami</button>
-                     <button class="dropdown-item" href="#">Galeri</button>
-                     <button class="dropdown-item" href="#">Logout</button>
+                     <a class="dropdown-item" href="#">Order</a>
+                     <a class="dropdown-item" href="#">Tentang kami</a>
+                     <a class="dropdown-item" href="#">Hubungi kami</a>
+                     <a class="dropdown-item" href="#">Galeri</a>
+                     <a class="dropdown-item" href="{{ url('/user/forget') }}">Logout</a>
                   </div>
                </div>
             </div>

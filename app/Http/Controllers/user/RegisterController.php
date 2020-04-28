@@ -19,11 +19,11 @@ class RegisterController extends Controller
     public function index(Request $request)
     {
         if($request->session()->has('nama')) {
-            return view('user_view.register_view');
-        } else {
             return redirect('/');
+        } else {
+            $value = 'none';
+            return view('user_view.register_view', compact('value'));
         }
-        // return view('user_view.register_view');
     }
 
     /**
@@ -36,7 +36,7 @@ class RegisterController extends Controller
     {
         // validasi form di sisi server
         $request->validate([
-            'nama'      => ['required', 'min:5', 'max:50', ["regex", "^([a-zA-Z' ]+)$^"]], 
+            'nama'      => ['required', 'min:5', 'max:35', ["regex", "^([a-zA-Z' ]+)$^"]], 
             'email'     => ['required', 'min:5', 'max:50'],
             'no_telp'   => ['required', 'digits_between:11,15'],
             'password'  => ['required', 'max:15']
@@ -47,7 +47,7 @@ class RegisterController extends Controller
         $user->no_telp = $request->no_telp;
         $user->password = Hash::make($request->password);
         $user->save();
-        return redirect('/lihat1');
+        return redirect('/');
     }
 
 }

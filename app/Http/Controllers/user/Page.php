@@ -7,7 +7,19 @@ use Illuminate\Http\Request;
 
 class Page extends Controller
 {
-    public function index() {
-        return view('user_view.landing_page');
+    public function index(Request $request) {
+        if($request->session()->has('nama')) {
+            $value = $request->session()->get('nama');
+            return view('user_view.landing_page', compact('value'));
+        } else {
+            $value = 'none';
+            return view('user_view.landing_page', compact('value'));
+        }
     }
+
+    public function pemesanan(){
+        return view('user_view.form_pemesanan');
+    }
+
+   
 }

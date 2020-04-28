@@ -19,13 +19,11 @@ class LoginController extends Controller
     public function index(Request $request)
     {
         if($request->session()->has('nama')) {
-            $value = $request->session()->get('nama');
-            return view('user_view.login_view', compact('value'));
+            return redirect('/');
         } else {
             $value = 'none';
             return view('user_view.login_view', compact('value'));
         }
-        // return view('user_view.login_view');
     }
 
     /**
@@ -43,8 +41,6 @@ class LoginController extends Controller
     }
     public function forgetSession(Request $request) {
         // function ini digunakan pada saat logout
-        // $request->session()->flush();
-        // return redirect('/lihat1');
         if($request->session()->has('nama')) {
             $request->session()->flush();
             return redirect('/');

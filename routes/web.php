@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 //--------------PAGE
 Route::get('/' ,'user\Page@index');
+Route::get('/pemesanan' ,'user\Page@pemesanan');
 
 
 //--------------LOGIN dan REGISTER 
@@ -33,7 +34,8 @@ Route::get('/user/forget', 'user\LoginController@forgetSession');
 
 
 
-Route::view('/lihat', 'admin_view/layout/main');
+// Route::view('/lihat', 'admin_view/layout/main');
+// Route::view('/lihat2', 'user_view/form_pemesanan');
 //--------------DEVELOPMENT ONLY
 // Route::view('/lihat' ,'user_view/loginbaru');
 // Route::view('/lihat2' ,'user_view/registerbaru');
