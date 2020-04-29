@@ -17,7 +17,7 @@
          <div class="col-md-3 col-sm-6">
              <div class="product-grid6">
                  <div class="product-image6">
-                     <a href="#">
+                     <a href="">
                          <img class="pic-1" src="{{ asset('dist/frontend/img/fast.png') }}">
                      </a>
                  </div>
@@ -27,15 +27,15 @@
                      </div>
                  </div>
                  <ul class="social">
-                     <li><a href="" data-tip="Pilih Treatment"><i class="fa fa-shopping-cart"></i></a></li>
+                     <li><button id="bFastClean" data-tip="Pilih Treatment"><i class="fa fa-shopping-cart"></i></button></li>
                  </ul>
              </div>
          </div>
          <div class="col-md-3 col-sm-6">
              <div class="product-grid6">
                  <div class="product-image6">
-                     <a href="#">
-                         <img class="pic-1" src="{{ asset('dist/frontend/img/fast.png') }}">
+                     <a href="">
+                         <img class="pic-1" src="{{ asset('dist/frontend/img/express.png') }}">
                      </a>
                  </div>
                  <div class="product-content">
@@ -44,15 +44,15 @@
                      </div>
                  </div>
                  <ul class="social">
-                     <li><a href="" data-tip="Pilih Treatment"><i class="fa fa-shopping-cart"></i></a></li>
+                     <li><button href="" id="bExpressClean" data-tip="Pilih Treatment"><i class="fa fa-shopping-cart"></i></button></li>
                  </ul>
              </div>
          </div>
          <div class="col-md-3 col-sm-6">
              <div class="product-grid6">
                  <div class="product-image6">
-                     <a href="#">
-                         <img class="pic-1" src="{{ asset('dist/frontend/img/fast.png') }}">
+                     <a href="">
+                         <img class="pic-1" src="{{ asset('dist/frontend/img/deep.png') }}">
                      </a>
                  </div>
                  <div class="product-content">
@@ -61,15 +61,15 @@
                      </div>
                  </div>
                  <ul class="social">
-                     <li><a href="" data-tip="Pilih Treatment"><i class="fa fa-shopping-cart"></i></a></li>
+                     <li><button href="" id="bDeepClean" data-tip="Pilih Treatment"><i class="fa fa-shopping-cart"></i></button></li>
                  </ul>
              </div>
          </div>
          <div class="col-md-3 col-sm-6">
              <div class="product-grid6">
                  <div class="product-image6">
-                     <a href="#">
-                         <img class="pic-1" src="{{ asset('dist/frontend/img/fast.png') }}">
+                     <a href="">
+                         <img class="pic-1" src="{{ asset('dist/frontend/img/repainting.png') }}">
                      </a>
                  </div>
                  <div class="product-content">
@@ -78,52 +78,106 @@
                      </div>
                  </div>
                  <ul class="social">
-                     <li><a href="" data-tip="Pilih Treatment"><i class="fa fa-shopping-cart"></i></a></li>
+                     <li><button href="" id="bCanvasRepainting" data-tip="Pilih Treatment"><i class="fa fa-shopping-cart"></i></button></li>
                  </ul>
              </div>
          </div>
       </div>
-      
-      <div class="row">
-        <div class="col-md-5 mx-auto mt-2">
-           <form action="" method="POST">
-              @csrf
-              <p class="text-center" style="color: #919191">lalu isi form berikut</p>
-              <div class="form-group">
-                 <label for="">Jenis Sepatu</label>
-                 <div class="input-group flex-nowrap">
-                    <div class="input-group-prepend">
-                       <span class="input-group-text"><i class="far fa-check-circle"></i></span>
-                    </div>
-                    <input name="email" type="email" class="form-control" required>
-                 </div>       
-              </div>
-              <div class="form-group">
-                 <label for="">Ukuran Sepatu</label>
-                 <div class="input-group flex-nowrap">
-                    <div class="input-group-prepend">
-                       <span class="input-group-text"><i class="far fa-user"></i></span>
-                    </div>
-                    <input name="email" type="email" class="form-control" required>
-                 </div>       
-              </div>
-              <div class="form-group">
-                 <label for="">Alamat Pengambilan</label>
-                 <div class="input-group flex-nowrap">
-                    <div class="input-group-prepend">
-                       <span class="input-group-text"><i class="far fa-user"></i></span>
-                    </div>
-                    <input name="email" type="email" class="form-control" required>
-                 </div>       
-              </div>
-              <button type="submit" class="btn btn-primary btn-block py-3 rounded-lg mt-4">Masuk Akun Saya</button>
-
-           </form>
+      {{---------------------------------------------------------------------------------------------}}
+      <hr class="mb-4">
+      <h5 class="text-center">checkout pemesanan</h5>
+      <div class="row mb-5 mt-5">
+        <div class="col-md-6 mx-auto mb-3">
+            <p class="text-center" style="color: #919191">konfirmasi jenis treatment</p>
+            <div class="mt-5">
+                <h4>Harga Treatment: <i class="float-right mr-5">50000</i></h4>
+                <h4>Biaya Antar: <i class="float-right mr-5">10000</i></h4>
+                <hr>
+                <h4>Total: <i class="float-right mr-5">10000</i></h4>
+            </div>
         </div>
+        <div class="col-md-6 mx-auto">
+           <form action="{{ url('/user/formsubmitpemesanan') }}" method="POST">
+               @csrf
+               <p class="text-center" style="color: #919191">dan isi form berikut</p>
+               <input id="treatmentinput" type="hidden" name="id_treatment" required>
+               <input id="userinput" type="hidden" name="id_user" required>
+               <div class="form-group">
+                  <div class="input-group flex-nowrap">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fa-check-circle"></i></span>
+                     </div>
+                     <input name="jenis_sepatu" type="text" placeholder="Masukan Jenis Sepatu" class="form-control" required>
+                  </div>       
+               </div>
+               <div class="form-group">
+                  <div class="input-group flex-nowrap">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-sort-numeric-up"></i></span>
+                     </div>
+                     <input name="ukuran_sepatu" type="text" placeholder="Ukuran Sepatu" class="form-control" required>
+                  </div>       
+               </div>
+               <div class="form-group">
+                  <div class="input-group flex-nowrap">
+                     <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
+                     </div>
+                     <input name="alamat_pengambilan" type="text" placeholder="Alamat Pengambilan" class="form-control" required>
+                  </div>       
+               </div>
+               <div class="form-group">
+                   <div class="input-group flex-nowrap">
+                      <div class="input-group-prepend">
+                         <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
+                      </div>
+                      <input name="no_telp" type="number" placeholder="No Telp Customer" class="form-control" required>
+                   </div>       
+                </div>
+               <button id="bSubmit" type="submit" class="btn btn-primary btn-block py-3 rounded-lg mt-5">Pesan Layanan</button>
+            </form>
+        </div>
+
      </div>
 
      
    </div>
 
 
+@endsection
+
+
+@section('custom-script')
+    <script>
+        // const buttonFastClean = document.getElementById('bFastClean');
+        // const bExpressClean = document.getElementById('bExpressClean');
+
+        const user = {!! json_encode($user) !!};        
+        document.getElementById('userinput').value = user.id;
+        const session = 'has';
+
+        $("#bFastClean").click(function(event) { 
+            $('#treatmentinput').val("1"); 
+        }); 
+
+        $("#bExpressClean").click(function(event) { 
+            $('#treatmentinput').val("2"); 
+        }); 
+
+        $("#bDeepClean").click(function(event) { 
+            $('#treatmentinput').val("3"); 
+        }); 
+        
+        $("#bCanvasRepainting").click(function(event) { 
+            $('#treatmentinput').val("4"); 
+        }); 
+
+        $("#bSubmit").submit(function( event ) {
+            if($('#treatmentinput').value === '') {
+                alert('pilih treatment terlebih dahulu');
+            }
+        });
+        
+    </script>
+    <script src="{{ asset('dist/frontend/js/custom.js') }}"></script>
 @endsection

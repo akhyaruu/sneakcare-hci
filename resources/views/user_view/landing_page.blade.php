@@ -131,30 +131,7 @@
         <!-- Grid column -->
         <div class="col-md-12">
           <div class="mb-5 flex-center">
-            {{-- <!-- Facebook -->
-            <a class="fb-ic">
-              <i class="fas fa-facebook-f fa-lg white-text mr-4"> </i>
-            </a>
-            <!-- Twitter -->
-            <a class="tw-ic">
-              <i class="fas fa-twitter fa-lg white-text mr-4"> </i>
-            </a>
-            <!-- Google +-->
-            <a class="gplus-ic">
-              <i class="fas fa-google-plus-g fa-lg white-text mr-4"> </i>
-            </a>
-            <!--Linkedin -->
-            <a class="li-ic">
-              <i class="fas fa-linkedin-in fa-lg white-text mr-4"> </i>
-            </a>
-            <!--Instagram-->
-            <a class="ins-ic">
-              <i class="fas fa-instagram fa-lg white-text mr-4"> </i>
-            </a>
-            <!--Pinterest-->
-            <a class="pin-ic">
-              <i class="fas fa-pinterest fa-lg white-text"> </i>
-            </a> --}}
+            
           </div>
         </div>
         <!-- Grid column -->
@@ -180,7 +157,16 @@
 
 
 @section('custom-script')
-   <script> const session = {!! json_encode($value) !!}; </script>
-   <script src="{{ asset('dist/frontend/js/custom.js') }}"></script>
+  <script> 
+    const user = {!! json_encode($user) !!};
+    let session;
+    if(user.hasOwnProperty('information') ){
+      // kalau object kosong
+      session = 'none';
+    } else {
+      session = 'has';
+    }  
+  </script>
+  <script src="{{ asset('dist/frontend/js/custom.js') }}"></script>
 @endsection
 

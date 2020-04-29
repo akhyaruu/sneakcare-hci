@@ -18,11 +18,12 @@ class RegisterController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->session()->has('nama')) {
+        if($request->session()->has('id')) {
             return redirect('/');
         } else {
-            $value = 'none';
-            return view('user_view.register_view', compact('value'));
+            // $value = 'none';
+            // return view('user_view.register_view', compact('value'));
+            return view('user_view.register_view');
         }
     }
 
@@ -47,7 +48,7 @@ class RegisterController extends Controller
         $user->no_telp = $request->no_telp;
         $user->password = Hash::make($request->password);
         $user->save();
-        return redirect('/');
+        return redirect('/login');
     }
 
 }

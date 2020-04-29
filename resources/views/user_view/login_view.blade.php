@@ -8,10 +8,17 @@
 
 @section('content')
    <div class="container mt-5">
-      <div class="col-md-5 mx-auto">
-         <h4 id="coba" class="text-center">Masuk Akun</h4>
+      <div id="id-col" class="col-md-5 mx-auto">
+         <h4 class="text-center">Masuk Akun</h4>
          <p class="mb-5 text-center" style="color: #919191">Untuk dapat melakukan pemesanan</p>
-         <form action="{{ url('/user/login') }}" method="POST">
+
+         @if (session('error'))
+            <div class="alert alert-warning" role="alert">
+               {{ session('error') }}
+            </div>
+         @endif
+
+         <form id="loginid" action="{{ url('/user/login') }}" method="POST">
             @csrf
             <div class="form-group">
                <div class="input-group flex-nowrap">

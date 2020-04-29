@@ -23,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/' ,'user\Page@index');
 Route::get('/pemesanan' ,'user\Page@pemesanan');
 
+//--------------FORM SUBMIT
+Route::post('/user/formsubmitpemesanan', 'user\Page@submitorder');
 
 //--------------LOGIN dan REGISTER 
 Route::get('/register', 'user\RegisterController@index');

@@ -18,11 +18,12 @@ class LoginController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->session()->has('nama')) {
+        if($request->session()->has('id')) {
             return redirect('/');
         } else {
-            $value = 'none';
-            return view('user_view.login_view', compact('value'));
+            return view('user_view.login_view');
+            // $alert = array('noalert' => 'no alert');
+            // return view('user_view.login_view', compact('alert'));
         }
     }
 
@@ -35,17 +36,21 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            $request->session()->put('nama',$user->nama);
+            $request->session()->put('id',$user->id);
             return redirect('/');
+        } else {
+            // $alert = array('alert' => 'Pastikan alamat email dan password benar');
+            // return redirect('/login', compact('alert'));
+            return redirect('/login')->with('error', 'alamat email atau password salah');
         }
     }
     public function forgetSession(Request $request) {
         // function ini digunakan pada saat logout
-        if($request->session()->has('nama')) {
+        if($request->session()->has('id')) {
             $request->session()->flush();
             return redirect('/');
         } else {
-            return redirect('/login');
+            return redirect('/login')->with('error', 'kamu belum login!');
         }
     }
 

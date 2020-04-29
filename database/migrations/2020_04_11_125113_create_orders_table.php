@@ -22,9 +22,9 @@ class CreateOrdersTable extends Migration
             $table->foreign('id_user')->references('id')->on('users');
             // ------------------------------------------------
             $table->string('jenis_sepatu', 20);	
-            $table->integer('ukuran_sepatu');	
+            $table->string('ukuran_sepatu', 4);	
             $table->string('alamat_pengambilan', 150);	
-            $table->char('no_telp_customer', 12);
+            $table->string('no_telp_customer', 15);
         });
     }
 

@@ -27,7 +27,7 @@
                <div class="dropdown open mx-auto">
                <button class="btn dropdown-toggle ml-sm-4" style="background-color:darkturquoise;" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Order & Menu</button>
                   <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="triggerId">
-                     <a class="dropdown-item" href="#">Order</a>
+                     <a class="dropdown-item" href="{{ url('/pemesanan') }}">Order</a>
                      <a class="dropdown-item" href="#">Tentang kami</a>
                      <a class="dropdown-item" href="#">Hubungi kami</a>
                      <a class="dropdown-item" href="#">Galeri</a>

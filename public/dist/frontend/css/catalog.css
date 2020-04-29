@@ -99,7 +99,7 @@
     display: inline-block
 }
 
-.product-grid6 .social li a {
+.product-grid6 .social li button {
     color: #909090;
     font-size: 16px;
     line-height: 45px;
@@ -114,14 +114,14 @@
     transition: all .3s ease-in-out
 }
 
-.product-grid6 .social li a:hover {
+.product-grid6 .social li button:hover {
     color: #fff;
     background-color: #2e86de;
     width: 80px
 }
 
-.product-grid6 .social li a:after,
-.product-grid6 .social li a:before {
+.product-grid6 .social li button:after,
+.product-grid6 .social li button:before {
     content: attr(data-tip);
     color: #fff;
     background-color: #2e86de;
@@ -138,7 +138,7 @@
     top: -30px
 }
 
-.product-grid6 .social li a:after {
+.product-grid6 .social li button:after {
     content: '';
     height: 15px;
     width: 15px;
@@ -148,8 +148,8 @@
     z-index: -1
 }
 
-.product-grid6 .social li a:hover:after,
-.product-grid6 .social li a:hover:before {
+.product-grid6 .social li button:hover:after,
+.product-grid6 .social li button:hover:before {
     opacity: 1
 }
 

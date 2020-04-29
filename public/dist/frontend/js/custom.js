@@ -8,7 +8,6 @@ const bNamaUser = document.getElementById('button-nama-user');
 const bNotifikasi = document.getElementById('button-notifikasi');
 
 if (session === 'none') { // dia belum login >> button login + register ada, button nama + notifikasi belum ada
-    console.log(session);
     if (typeof (bLogin) != 'undefined' && bLogin != null && typeof (bRegister) != 'undefined' && bRegister != null) {
         $("#button-nama-user").remove();
         $("#button-notifikasi").remove();
@@ -18,15 +17,14 @@ if (session === 'none') { // dia belum login >> button login + register ada, but
         $("#button-nama-user").remove();
         $("#button-notifikasi").remove();
     }
-} else { // dia sudah login >> button login + register tidak ada, button nama + notifikasi ada
-    console.log(session);
+} else if (session === 'has') { // dia sudah login >> button login + register tidak ada, button nama + notifikasi ada
     if (typeof (bNamaUser) != 'undefined' && bNamaUser != null && typeof (bNotifikasi) != 'undefined' && bNotifikasi != null) {
         $("#button-login").remove();
         $("#button-register").remove();
     } else {
         $("#navbar-right-asset").prepend('<a id="button-notifikasi" class="btn" href="{{ url("/notification") }}"><i class="fas fa-bell" style="color: white"></i></a>');
         $("#navbar-right-asset").prepend('<button id="button-nama-user" class="nav-item btn text-white"></button>');
-        document.getElementById('button-nama-user').textContent = `Halo, ${session}`;
+        document.getElementById('button-nama-user').textContent = `Halo, ${user.nama}`;
         $("#button-login").remove();
         $("#button-register").remove();
     }
