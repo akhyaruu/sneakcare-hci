@@ -34,14 +34,6 @@ Route::get('/login', 'user\LoginController@index');
 Route::post('/user/login', 'user\LoginController@authenticate');
 Route::get('/user/forget', 'user\LoginController@forgetSession');
 
-
-
-// Route::view('/lihat', 'admin_view/layout/main');
-// Route::view('/lihat2', 'user_view/form_pemesanan');
-//--------------DEVELOPMENT ONLY
-// Route::view('/lihat' ,'user_view/loginbaru');
-// Route::view('/lihat2' ,'user_view/registerbaru');
-// Route::view('/lihat1' ,'admin_view/layout/main');
-// Route::view('/lihat1' ,'user_view/landing_page');
-
+//--------------ADMIN
+Route::get('/dashboard-admin-sneakcare/pesanan', 'admin\AdminDashboard@index');
 

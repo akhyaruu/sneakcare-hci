@@ -44,6 +44,7 @@ class LoginController extends Controller
             return redirect('/login')->with('error', 'alamat email atau password salah');
         }
     }
+    
     public function forgetSession(Request $request) {
         // function ini digunakan pada saat logout
         if($request->session()->has('id')) {

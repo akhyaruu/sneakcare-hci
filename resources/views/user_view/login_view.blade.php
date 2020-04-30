@@ -17,6 +17,11 @@
                {{ session('error') }}
             </div>
          @endif
+         @if (session('message'))
+            <div class="alert alert-success" role="alert">
+               {{ session('message') }}
+            </div>
+         @endif
 
          <form id="loginid" action="{{ url('/user/login') }}" method="POST">
             @csrf

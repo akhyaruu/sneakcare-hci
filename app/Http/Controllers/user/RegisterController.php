@@ -48,7 +48,7 @@ class RegisterController extends Controller
         $user->no_telp = $request->no_telp;
         $user->password = Hash::make($request->password);
         $user->save();
-        return redirect('/login');
+        return redirect('/login')->with('message', 'register berhasil! sekarang kamu dapat login');
     }
 
 }

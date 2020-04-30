@@ -18,24 +18,24 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="{{ asset('dist/frontend/img/senko1.jpg') }}">
+      <img class="d-block w-100" src="{{ asset('dist/frontend/img/shoes1.jpg') }}">
         <div class="carousel-caption d-none d-md-block">
           <h5>Ayo Cuci Sepatu!!</h5>
-          <p>Temukan perawatan sepatu terbaik anda</p>
+          <p>Temukan perawatan sepatu terbaik anda dengan menggunakan layanan kami</p>
         </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="{{ asset('dist/frontend/img/senko2.jpg') }}">
+      <img class="d-block w-100" src="{{ asset('dist/frontend/img/shoes2.jpg') }}">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Promo Ramadhan</h5>
+        <h5>Promo Bulan Ramadhan</h5>
         <p>Cuci 3 pasang gratis 1 pasang</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="{{ asset('dist/frontend/img/senko3.jpg') }}">
+      <img class="d-block w-100" src="{{ asset('dist/frontend/img/shoes3.jpg') }}">
       <div class="carousel-caption d-none d-md-block">
         <h5>#StayHome</h5>
-        <p>Fuck Coron Virus</p>
+        <p>Kamu tetap aja dirumah, biar kami yang menjemput sepatu kamu</p>
       </div>
     </div>
   </div>

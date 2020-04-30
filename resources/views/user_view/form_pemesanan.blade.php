@@ -2,8 +2,8 @@
 
 
 @section('customeheader')
-    <link rel="stylesheet" href="{{ asset('dist/frontend/css/catalog.css') }}">
-    <title>Form Pemesanan - Sneakcare</title>
+   <link rel="stylesheet" href="{{ asset('dist/frontend/css/catalog.css') }}">
+   <title>Form Pemesanan - Sneakcare</title>
 @endsection
 
 
@@ -22,7 +22,7 @@
                      </a>
                  </div>
                  <div class="product-content">
-                     <h3 class="title"><a href="#">Fast Clean</a></h3>
+                     <h3 class="title"><a href="">Fast Clean</a></h3>
                      <div class="price">Rp. 50.000
                      </div>
                  </div>
@@ -39,7 +39,7 @@
                      </a>
                  </div>
                  <div class="product-content">
-                     <h3 class="title"><a href="#">Express Clean</a></h3>
+                     <h3 class="title"><a href="">Express Clean</a></h3>
                      <div class="price">Rp. 180.000
                      </div>
                  </div>
@@ -56,7 +56,7 @@
                      </a>
                  </div>
                  <div class="product-content">
-                     <h3 class="title"><a href="#">Deep Clean</a></h3>
+                     <h3 class="title"><a href="">Deep Clean</a></h3>
                      <div class="price">Rp. 150.000
                      </div>
                  </div>
@@ -73,7 +73,7 @@
                      </a>
                  </div>
                  <div class="product-content">
-                     <h3 class="title"><a href="#">Canvas Repainting</a></h3>
+                     <h3 class="title"><a href="">Canvas Repainting</a></h3>
                      <div class="price">Rp. 100.000
                      </div>
                  </div>
@@ -88,12 +88,13 @@
       <h5 class="text-center">checkout pemesanan</h5>
       <div class="row mb-5 mt-5">
         <div class="col-md-6 mx-auto mb-3">
-            <p class="text-center" style="color: #919191">konfirmasi jenis treatment</p>
+            <p class="text-center" style="color: #919191">konfirmasi treatment</p>
             <div class="mt-5">
                 <h4>Harga Treatment: <i class="float-right mr-5">50000</i></h4>
                 <h4>Biaya Antar: <i class="float-right mr-5">10000</i></h4>
                 <hr>
                 <h4>Total: <i class="float-right mr-5">10000</i></h4>
+                <p class="mt-5 mr-5" style="color: #919191">*pastikan jenis treatment dipilih dan form diisi, jika berhasil maka anda akan diarahkan ke halaman utama</p>
             </div>
         </div>
         <div class="col-md-6 mx-auto">
@@ -149,34 +150,29 @@
 
 @section('custom-script')
     <script>
-        // const buttonFastClean = document.getElementById('bFastClean');
-        // const bExpressClean = document.getElementById('bExpressClean');
-
         const user = {!! json_encode($user) !!};        
         document.getElementById('userinput').value = user.id;
         const session = 'has';
 
         $("#bFastClean").click(function(event) { 
-            $('#treatmentinput').val("1"); 
+            $('#treatmentinput').val("1");
+            alert('Treatment Fast Clean dipilih!');
         }); 
 
         $("#bExpressClean").click(function(event) { 
             $('#treatmentinput').val("2"); 
+            alert('Treatment Express Clean dipilih!');
         }); 
 
         $("#bDeepClean").click(function(event) { 
             $('#treatmentinput').val("3"); 
+            alert('Treatment Deep Clean dipilih!');
         }); 
         
         $("#bCanvasRepainting").click(function(event) { 
             $('#treatmentinput').val("4"); 
+            alert('Treatment Canvas Repainting dipilih!');
         }); 
-
-        $("#bSubmit").submit(function( event ) {
-            if($('#treatmentinput').value === '') {
-                alert('pilih treatment terlebih dahulu');
-            }
-        });
         
     </script>
     <script src="{{ asset('dist/frontend/js/custom.js') }}"></script>
