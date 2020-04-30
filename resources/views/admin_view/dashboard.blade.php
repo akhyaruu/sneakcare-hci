@@ -22,17 +22,19 @@
 
       {{-- <a href="/dashboard/post/create" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Tambah Portofolio Baru</a> --}}
       <div class="row mt-3">
+         @foreach ($orders as $order)
          <div class="col-sm-6">
            <div class="card">
              <div class="card-body">
-               <h5 class="card-title mb-2 font-weight-bold">Fast Clean</h5>
-               <p class="card-text h-auto">Ilham Akhyar | Sidoarjo, jawa timur</p>
+               <h5 class="card-title mb-2 font-weight-bold">{{ $order->jenis_treatment }}</h5>
+               <p class="card-text h-auto">{{ $order->nama }} | {{ $order->alamat_pengambilan }}</p>
                <a href="" class="btn btn-primary">Detail Order</a>
                <a href="" class="btn btn-warning">Konfirmasi Order</a>
                <a href="" class="btn btn-danger float-right">Hapus</a>
              </div>
            </div>
          </div>
+         @endforeach
        </div>
 
    </div>

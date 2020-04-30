@@ -77,7 +77,7 @@
 
   <!-- Footer -->
   <footer class="font-small mt-5" style="background-color: #8264af">
-    <!-- Footer Links -->
+    {{-- <!-- Footer Links -->
     <div class="container">
       <!-- Grid row-->
       <div class="row text-center d-flex justify-content-center pt-5 mb-3">
@@ -138,7 +138,7 @@
       </div>
       <!-- Grid row-->
     </div>
-    <!-- Footer Links -->
+    <!-- Footer Links --> --}}
 
     <!-- Copyright -->
     <div class="text-center py-3 text-white" style="background-color: #563D7C">© 2020 Copyright Sneakcare</div>

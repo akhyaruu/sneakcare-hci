@@ -5,9 +5,24 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+//--------------custom------------
+use App\Order;
+use Illuminate\Support\Facades\DB;
+
 class AdminDashboard extends Controller
 {
     public function index() {
-        return view('admin_view.dashboard');
+        // $nama = "Diki Alfarabi Hadi";
+        // $order = Order::with('treatments')->get();
+        
+        
+        // return view('admin_view.dashboard', ['orders' => $order, 'namas' => $nama]);
+        $order = DB::table('orders')
+            ->join('treatments', 'orders.id_treatment', '=', 'treatments.id')
+            ->join('users', 'orders.id_user', '=', 'users.id')
+            ->select('orders.*', 'treatments.jenis_treatment', 'users.nama')
+            ->get();
+
+        return view('admin_view.dashboard', ['orders' => $order]);
     }
 }
