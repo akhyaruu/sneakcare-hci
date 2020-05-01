@@ -25,7 +25,7 @@ class Page extends Controller
         }
     }
 
-    public function pemesanan(Request $request){
+    public function pemesanan(Request $request) {
         if($request->session()->has('id')) {
             $value = $request->session()->get('id');
             $user = User::find($value);
@@ -36,13 +36,13 @@ class Page extends Controller
         // return view('user_view.form_pemesanan');
     }
 
-    public function submitorder(Request $request){
+    public function submitorder(Request $request) {
         $request->validate([
             'id_treatment'        => ['required'], 
             'id_user'             => ['required'],
-            'jenis_sepatu'        => ['required', 'max:20', 'min:2'],
+            'jenis_sepatu'        => ['required', 'min:4', 'max:20'],
             'ukuran_sepatu'       => ['required', 'min:2', 'max:4'],
-            'alamat_pengambilan'  => ['required', 'min:5', 'max:150'],
+            'alamat_pengambilan'  => ['required', 'min:10', 'max:150'],
             'no_telp'             => ['required', 'digits_between:11,15']
         ]);
         $order = new Order;
@@ -54,6 +54,17 @@ class Page extends Controller
         $order->no_telp_customer = $request->no_telp;
         $order->save();
         return redirect('/');
+    }
+
+    public function tentangkami(Request $request) {
+        if($request->session()->has('id')) {
+            $value = $request->session()->get('id');
+            $user = User::find($value);
+            return view('user_view.tentang_kami', compact('user'));
+        } else {
+            $user = array('information' => 'nouser');
+            return view('user_view.tentang_kami', compact('user'));
+        }
     }
 
    

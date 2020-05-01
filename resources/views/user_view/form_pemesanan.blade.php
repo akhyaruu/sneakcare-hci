@@ -124,7 +124,7 @@
                      <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
                      </div>
-                     <input name="alamat_pengambilan" type="text" placeholder="Alamat Pengambilan" class="form-control" required>
+                     <input name="alamat_pengambilan" type="text" placeholder="Alamat Lengkap Pengambilan" class="form-control" required>
                   </div>       
                </div>
                <div class="form-group">

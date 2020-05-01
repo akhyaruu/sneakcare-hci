@@ -22,7 +22,7 @@ if (session === 'none') { // dia belum login >> button login + register ada, but
         $("#button-login").remove();
         $("#button-register").remove();
     } else {
-        $("#navbar-right-asset").prepend('<a id="button-notifikasi" class="btn" href="{{ url("/notification") }}"><i class="fas fa-bell" style="color: white"></i></a>');
+        $("#navbar-right-asset").prepend('<a id="button-notifikasi" class="btn" href=""><i class="fas fa-bell" style="color: white"></i></a>');
         $("#navbar-right-asset").prepend('<button id="button-nama-user" class="nav-item btn text-white"></button>');
         document.getElementById('button-nama-user').textContent = `Halo, ${user.nama}`;
         $("#button-login").remove();

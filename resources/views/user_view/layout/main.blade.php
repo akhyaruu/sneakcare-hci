@@ -22,15 +22,13 @@
             <div id="navbar-right-asset" class="navbar-nav ml-auto">
                <a id="button-login" class="nav-item btn text-white ml-md-1" href="{{ url('/login') }}">Masuk</a>
                <a id="button-register" class="nav-item btn text-white ml-md-1" href="{{ url('/register') }}">Daftar</a>
-               {{-- <button id="button-nama-user" class="nav-item btn text-white">Halo, Ilham Akhyar</button>
-               <a id="button-notifikasi" class="btn" href="{{ url('/notification') }}"><i class="fas fa-bell" style="color: white"></i></a> --}}
                <div class="dropdown open mx-auto">
                <button class="btn dropdown-toggle ml-sm-4" style="background-color:darkturquoise;" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Order & Menu</button>
                   <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="triggerId">
                      <a class="dropdown-item" href="{{ url('/pemesanan') }}">Order</a>
-                     <a class="dropdown-item" href="#">Tentang kami</a>
-                     <a class="dropdown-item" href="#">Hubungi kami</a>
-                     <a class="dropdown-item" href="#">Galeri</a>
+                     <a class="dropdown-item" href="{{ url('/about-us') }}">Tentang kami</a>
+                     <a class="dropdown-item" href="">Hubungi kami</a>
+                     <a class="dropdown-item" href="">Galeri</a>
                      <a class="dropdown-item" href="{{ url('/user/forget') }}">Logout</a>
                   </div>
                </div>

@@ -52,106 +52,47 @@
   <!-- container -->
   <div class="container">
   <!-- isi1 -->
-  <div class="row isi">
-    <div class="col-lg">
-      <img src="{{ asset('dist/frontend/img/bukti1.png') }}" alt="isi" class="img-fluid">
-    </div>
-    <div class="col-lg">
-      <h3>Ini contoh dari project kami</h3>
-      <p>Jadi ini masih coba-coba buat bikin home pagenya.. mudah-mudahan si bagus, tapi masih banyak yang harus di improve sii hehe.. doakan yaa..</p>
-    </div>
-  </div>
-  <!-- isi1 -->
-  <div class="row isi1 mt-5">
-    <div class="col-lg">
-      <h3>Bingung mau nulis apa</h3>
-      <p>Ini juga bingung mau nulis apa, jadi aku bikin aja seadanya hehe.. ini harusnya bisa digabungin di row atas, tapi aku gaberani coba-coba wkwk ntar ae tak belajar dulu caranya oke?okee..</p>
-    </div>
-    <div class="col-lg">
-      <img src="{{ asset('dist/frontend/img/bukti1.png') }}" alt="isi1" class="img-fluid">
-    </div>
-  </div>
+      <div class="row w-75 mx-auto">
+         <div class="col-md">
+            <img src="{{ asset('dist/frontend/img/coach.png') }}" class="ml-5" width="160px">
+         </div>
+         <div class="col-md">
+            <h3 class="font-weight-bold">Place to clean your shoes</h3>
+            <p>kamu cukup melakukan pemesanan secara online dan kami akan menjemput sepatu kamu dengan cepat</p>
+            Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+         </div>
+      </div>
+
+      <div class="row mt-5 w-75 mx-auto">
+         <div class="col-md order-2 order-md-12">
+            <h3 class="font-weight-bold">Great service</h3>
+            <p>kami selalu memberikan layanan terbaik kepada customer kami, salah satunya yaitu memberikan promo2 menarik</p>
+            Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+         </div>
+         <div class="col-md mb-5 order-1 order-md-12">
+            <img src="{{ asset('dist/frontend/img/jobs.png') }}" class="ml-5" width="145px">
+         </div>
+      </div>
+
+      <div class="row mt-5 w-75 mx-auto">
+         <div class="col-md">
+            <img src="{{ asset('dist/frontend/img/signaling.png') }}" class="ml-5" width="145px">
+         </div>
+         <div class="col-md">
+            <h3 class="font-weight-bold">Affordable price</h3>
+            <p>layanan kami memiliki harga yang relatif terjangkau</p>
+            Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+         </div>
+      </div>
   </div>
   <!-- container akhir -->
 
 
   <!-- Footer -->
   <footer class="font-small mt-5" style="background-color: #8264af">
-    {{-- <!-- Footer Links -->
-    <div class="container">
-      <!-- Grid row-->
-      <div class="row text-center d-flex justify-content-center pt-5 mb-3">
-        <!-- Grid column -->
-        <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase font-weight-bold">
-            <a href="" class="text-dark">Tentang Kami</a>
-          </h6>
-        </div>
-        <!-- Grid column -->
-        
-        <!-- Grid column -->
-        <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase font-weight-bold">
-            <a href="" class="text-dark">Hubungi Kami</a>
-          </h6>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase font-weight-bold">
-            <a href="" class="text-dark">Bantuan</a>
-          </h6>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase font-weight-bold">
-            <a href="" class="text-dark">Galeri</a>
-          </h6>
-        </div>
-        <!-- Grid column -->
-
-      </div>
-      <!-- Grid row-->
-      <hr class="rgba-white-light" style="margin: 0 15%;">
-      <!-- Grid row-->
-      <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
-        <!-- Grid column -->
-        <div class="col-md-8 col-12 mt-5">
-          <p style="line-height: 1.7rem">Sneakcare merupakan layanan jasa pencucian sepatu secara online</p>
-        </div>
-        <!-- Grid column -->
-      </div>
-      <!-- Grid row-->
-      <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
-      <!-- Grid row-->
-      <div class="row pb-3">
-        <!-- Grid column -->
-        <div class="col-md-12">
-          <div class="mb-5 flex-center">
-            
-          </div>
-        </div>
-        <!-- Grid column -->
-      </div>
-      <!-- Grid row-->
-    </div>
-    <!-- Footer Links --> --}}
-
-    <!-- Copyright -->
     <div class="text-center py-3 text-white" style="background-color: #563D7C">© 2020 Copyright Sneakcare</div>
-    <!-- Copyright -->
   </footer>
   <!-- Footer Akhir-->
-
-  {{-- $('.carousel').carousel({
-    interval: 2500,
-    keyboard: true,
-    pause: 'hover',
-    wrap: true
-  }); --}}
 
 @endsection
 

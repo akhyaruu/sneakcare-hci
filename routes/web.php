@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 //--------------PAGE
 Route::get('/' ,'user\Page@index');
 Route::get('/pemesanan' ,'user\Page@pemesanan');
+Route::get('/about-us' ,'user\Page@tentangkami');
 
 //--------------FORM SUBMIT
 Route::post('/user/formsubmitpemesanan', 'user\Page@submitorder');
