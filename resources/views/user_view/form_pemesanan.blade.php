@@ -2,6 +2,7 @@
 
 
 @section('customeheader')
+   <link rel="stylesheet" href="{{ asset('dist/frontend/css/sweetalert.css') }}">
    <link rel="stylesheet" href="{{ asset('dist/frontend/css/catalog.css') }}">
    <title>Form Pemesanan - Sneakcare</title>
 @endsection
@@ -149,6 +150,7 @@
 
 
 @section('custom-script')
+    <script src="{{ asset('dist/frontend/js/sweetalert.min.js') }}"></script>
     <script>
         const user = {!! json_encode($user) !!};        
         document.getElementById('userinput').value = user.id;
@@ -156,22 +158,38 @@
 
         $("#bFastClean").click(function(event) { 
             $('#treatmentinput').val("1");
-            alert('Treatment Fast Clean dipilih!');
+            Swal.fire(
+                'Good job!',
+                'Treatment Fast Clean dipilih',
+                'success'
+            )
         }); 
 
         $("#bExpressClean").click(function(event) { 
             $('#treatmentinput').val("2"); 
-            alert('Treatment Express Clean dipilih!');
+            Swal.fire(
+                'Good job!',
+                'Treatment Express Clean dipilih',
+                'success'
+            )
         }); 
 
         $("#bDeepClean").click(function(event) { 
             $('#treatmentinput').val("3"); 
-            alert('Treatment Deep Clean dipilih!');
+            Swal.fire(
+                'Good job!',
+                'Treatment Deep Clean dipilih',
+                'success'
+            )
         }); 
         
         $("#bCanvasRepainting").click(function(event) { 
             $('#treatmentinput').val("4"); 
-            alert('Treatment Canvas Repainting dipilih!');
+            Swal.fire(
+                'Good job!',
+                'Treatment Canvas Repainting dipilih',
+                'success'
+            )
         }); 
         
     </script>

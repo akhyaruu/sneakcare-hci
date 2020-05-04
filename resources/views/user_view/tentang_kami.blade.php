@@ -47,7 +47,7 @@
          <!-- Team item-->
          <div class="col-xl-3 col-sm-6 mb-3">
             <div class="bg-white rounded shadow-sm py-5 px-4"><img src="{{ asset('dist/frontend/img/team3.png') }}" width="100" class="img-fluid rounded-circle mb-1 img-thumbnail shadow-sm">
-            <h5 class="mb-0">Heidi Akbar</h5><span class="small text-uppercase text-muted">Founder</span>
+            <h5 class="mb-0">Heidie Akbar</h5><span class="small text-uppercase text-muted">Founder</span>
             </div>
          </div>
          <!-- End-->

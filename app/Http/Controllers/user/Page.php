@@ -11,21 +11,20 @@ use App\Order;
 
 class Page extends Controller
 {
-    public function index(Request $request) {
+    public function index(Request $request) 
+    {
         if($request->session()->has('id')) {
             $value = $request->session()->get('id');
             $user = User::find($value);
-            // return view('user_view.landing_page', compact('value'));
             return view('user_view.landing_page', compact('user'));
         } else {
-            // $value = 'none';
-            // return view('user_view.landing_page', compact('value'));
             $user = array('information' => 'nouser');
             return view('user_view.landing_page', compact('user'));
         }
     }
 
-    public function pemesanan(Request $request) {
+    public function pemesanan(Request $request) 
+    {
         if($request->session()->has('id')) {
             $value = $request->session()->get('id');
             $user = User::find($value);
@@ -33,10 +32,10 @@ class Page extends Controller
         } else {
             return redirect('/login')->with('error', 'login dulu untuk dapat melakukan pemesanan');
         }
-        // return view('user_view.form_pemesanan');
     }
 
-    public function submitorder(Request $request) {
+    public function submitorder(Request $request) 
+    {
         $request->validate([
             'id_treatment'        => ['required'], 
             'id_user'             => ['required'],
@@ -56,7 +55,8 @@ class Page extends Controller
         return redirect('/');
     }
 
-    public function tentangkami(Request $request) {
+    public function tentangkami(Request $request) 
+    {
         if($request->session()->has('id')) {
             $value = $request->session()->get('id');
             $user = User::find($value);
@@ -64,6 +64,18 @@ class Page extends Controller
         } else {
             $user = array('information' => 'nouser');
             return view('user_view.tentang_kami', compact('user'));
+        }
+    }
+
+    public function galeri(Request $request) 
+    {
+        if($request->session()->has('id')) {
+            $value = $request->session()->get('id');
+            $user = User::find($value);
+            return view('user_view.galeri', compact('user'));
+        } else {
+            $user = array('information' => 'nouser');
+            return view('user_view.galeri', compact('user'));
         }
     }
 

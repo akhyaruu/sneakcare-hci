@@ -42,7 +42,7 @@
                   <div class="input-group-prepend">
                      <span  span class="input-group-text"><i class="fas fa-lock"></i></span>
                   </div>
-                  <input name="password" type="password" class="form-control" placeholder="Password" required>
+                  <input name="password" type="password" class="form-control" placeholder="Password (min. 5 karakter)" required>
                </div>
             </div>
             <div>

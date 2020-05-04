@@ -21,8 +21,6 @@ class RegisterController extends Controller
         if($request->session()->has('id')) {
             return redirect('/');
         } else {
-            // $value = 'none';
-            // return view('user_view.register_view', compact('value'));
             return view('user_view.register_view');
         }
     }
@@ -39,8 +37,8 @@ class RegisterController extends Controller
         $request->validate([
             'nama'      => ['required', 'min:5', 'max:35', ["regex", "^([a-zA-Z' ]+)$^"]], 
             'email'     => ['required', 'min:5', 'max:50'],
-            'no_telp'   => ['required', 'digits_between:11,15'],
-            'password'  => ['required', 'max:15']
+            'no_telp'   => ['required', 'digits_between:11,13'],
+            'password'  => ['required', 'min:5', 'max:15']
         ]);
         $user = new User;
         $user->nama = $request->nama;

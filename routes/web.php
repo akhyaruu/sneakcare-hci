@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/' ,'user\Page@index');
 Route::get('/pemesanan' ,'user\Page@pemesanan');
 Route::get('/about-us' ,'user\Page@tentangkami');
+Route::get('/galery' ,'user\Page@galeri');
 
 //--------------FORM SUBMIT
 Route::post('/user/formsubmitpemesanan', 'user\Page@submitorder');

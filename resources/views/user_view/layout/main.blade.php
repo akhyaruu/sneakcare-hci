@@ -27,8 +27,7 @@
                   <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="triggerId">
                      <a class="dropdown-item" href="{{ url('/pemesanan') }}">Order</a>
                      <a class="dropdown-item" href="{{ url('/about-us') }}">Tentang kami</a>
-                     <a class="dropdown-item" href="">Hubungi kami</a>
-                     <a class="dropdown-item" href="">Galeri</a>
+                     <a class="dropdown-item" href="{{ url('/galery') }}">Galeri</a>
                      <a class="dropdown-item" href="{{ url('/user/forget') }}">Logout</a>
                   </div>
                </div>

@@ -12,11 +12,6 @@ use Illuminate\Support\Facades\DB;
 class AdminDashboard extends Controller
 {
     public function index() {
-        // $nama = "Diki Alfarabi Hadi";
-        // $order = Order::with('treatments')->get();
-        
-        
-        // return view('admin_view.dashboard', ['orders' => $order, 'namas' => $nama]);
         $order = DB::table('orders')
             ->join('treatments', 'orders.id_treatment', '=', 'treatments.id')
             ->join('users', 'orders.id_user', '=', 'users.id')

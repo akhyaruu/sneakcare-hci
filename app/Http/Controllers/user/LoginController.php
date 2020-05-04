@@ -22,8 +22,6 @@ class LoginController extends Controller
             return redirect('/');
         } else {
             return view('user_view.login_view');
-            // $alert = array('noalert' => 'no alert');
-            // return view('user_view.login_view', compact('alert'));
         }
     }
 
@@ -31,7 +29,8 @@ class LoginController extends Controller
      * Membuat native autentikasi user
      * 
      */
-    public function authenticate(Request $request) {
+    public function authenticate(Request $request) 
+    {
         $user = User::where('email',  $request->email)->first();
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
@@ -39,13 +38,12 @@ class LoginController extends Controller
             $request->session()->put('id',$user->id);
             return redirect('/');
         } else {
-            // $alert = array('alert' => 'Pastikan alamat email dan password benar');
-            // return redirect('/login', compact('alert'));
             return redirect('/login')->with('error', 'alamat email atau password salah');
         }
     }
     
-    public function forgetSession(Request $request) {
+    public function forgetSession(Request $request) 
+    {
         // function ini digunakan pada saat logout
         if($request->session()->has('id')) {
             $request->session()->flush();
