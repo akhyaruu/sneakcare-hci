@@ -33,6 +33,7 @@ Route::post('/user/formsubmitpemesanan', 'user\Page@submitorder');
 //--------------LOGIN dan REGISTER 
 Route::get('/register', 'user\RegisterController@index');
 Route::post('/user/register', 'user\RegisterController@store');
+
 Route::get('/login', 'user\LoginController@index');
 Route::post('/user/login', 'user\LoginController@authenticate');
 Route::get('/user/forget', 'user\LoginController@forgetSession');
