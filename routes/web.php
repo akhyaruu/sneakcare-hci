@@ -24,6 +24,8 @@ Route::get('/' ,'user\Page@index');
 Route::get('/pemesanan' ,'user\Page@pemesanan');
 Route::get('/about-us' ,'user\Page@tentangkami');
 Route::get('/galery' ,'user\Page@galeri');
+Route::get('/notifications' ,'user\Page@notifikasi');
+// Route::view('/notifications', 'user_view.notifikasi');
 
 //--------------FORM SUBMIT
 Route::post('/user/formsubmitpemesanan', 'user\Page@submitorder');
@@ -31,11 +33,11 @@ Route::post('/user/formsubmitpemesanan', 'user\Page@submitorder');
 //--------------LOGIN dan REGISTER 
 Route::get('/register', 'user\RegisterController@index');
 Route::post('/user/register', 'user\RegisterController@store');
-
 Route::get('/login', 'user\LoginController@index');
 Route::post('/user/login', 'user\LoginController@authenticate');
 Route::get('/user/forget', 'user\LoginController@forgetSession');
 
 //--------------ADMIN
 Route::get('/dashboard-admin-sneakcare/pesanan', 'admin\AdminDashboard@index');
+Route::post('/dashboard-admin-sneakcare/konfirmasi-pesanan', 'admin\AdminDashboard@konfirmasiPesanan');
 

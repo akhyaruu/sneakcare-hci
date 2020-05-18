@@ -98,7 +98,7 @@
             <a href="" class="nav-link">
                <i class="nav-icon fas fa-file-contract"></i>
                <p>
-                  Order
+                  Pesanan
                </p>
             </a>
             </li>

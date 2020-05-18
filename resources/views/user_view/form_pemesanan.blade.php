@@ -12,6 +12,11 @@
    <div class="container mt-5">
       <h4 class="text-center mb-5">Form Pemesanan</h4>
       <hr>
+      @if (session('error'))
+        <div class="alert alert-warning" role="alert">
+            {{ session('error') }}
+        </div>        
+      @endif
       <h5 class="text-center">jenis treatment</h5>
       <p class="text-center" style="color: #919191">pilih terlebih dahulu treatment yang kamu inginkan</p>
       <div class="row mb-4">
@@ -95,7 +100,7 @@
                 <h4>Biaya Antar: <i class="float-right mr-5">10000</i></h4>
                 <hr>
                 <h4>Total: <i class="float-right mr-5">10000</i></h4>
-                <p class="mt-5 mr-5" style="color: #919191">*pastikan jenis treatment dipilih dan form diisi, jika berhasil maka anda akan diarahkan ke halaman utama</p>
+                {{-- <p class="mt-5 mr-5" style="color: #919191">*pastikan jenis treatment dipilih dan form diisi, jika berhasil maka anda akan diarahkan ke halaman utama</p> --}}
             </div>
         </div>
         <div class="col-md-6 mx-auto">

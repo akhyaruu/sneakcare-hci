@@ -28,6 +28,7 @@
                      <a class="dropdown-item" href="{{ url('/pemesanan') }}">Order</a>
                      <a class="dropdown-item" href="{{ url('/about-us') }}">Tentang kami</a>
                      <a class="dropdown-item" href="{{ url('/galery') }}">Galeri</a>
+                     <a class="dropdown-item" href="{{ url('/notifications') }}">Notifikasi</a>
                      <a class="dropdown-item" href="{{ url('/user/forget') }}">Logout</a>
                   </div>
                </div>

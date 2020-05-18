@@ -17,6 +17,11 @@
     <li data-target="#carousel" data-slide-to="1"></li>
     <li data-target="#carousel" data-slide-to="2"></li>
   </ol>
+  @if (session('message'))
+    <div class="alert alert-success" role="alert">
+      {{ session('message') }}
+    </div>        
+  @endif
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block w-100" src="{{ asset('dist/frontend/img/shoes1.jpg') }}">

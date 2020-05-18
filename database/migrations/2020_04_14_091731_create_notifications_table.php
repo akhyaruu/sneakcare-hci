@@ -18,7 +18,8 @@ class CreateNotificationsTable extends Migration
             // foreign key constraint
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users');
-            $table->string('isi_notifikasi', 20);	
+            $table->string('isi_notifikasi', 50);
+            $table->timestamps(0);	
         });
     }
 

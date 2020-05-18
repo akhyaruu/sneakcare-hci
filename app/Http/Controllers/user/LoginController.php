@@ -38,7 +38,7 @@ class LoginController extends Controller
             $request->session()->put('id',$user->id);
             return redirect('/');
         } else {
-            return redirect('/login')->with('error', 'alamat email atau password salah');
+            return redirect('/login')->with('error', 'Alamat email atau password salah');
         }
     }
     
@@ -49,7 +49,7 @@ class LoginController extends Controller
             $request->session()->flush();
             return redirect('/');
         } else {
-            return redirect('/login')->with('error', 'kamu belum login!');
+            return redirect('/login')->with('error', 'Kamu belum login!');
         }
     }
 
