@@ -11,6 +11,11 @@
    <div class="container mt-5">
       <div class="col-md-5 mx-auto">
          <h4 class="text-center mb-5">Daftar Akun Baru</h4>
+         @if (session('error'))
+            <div class="alert alert-warning" role="alert">
+               {{ session('error') }}
+            </div>
+         @endif
          <form action="{{ url('/user/register') }}" method="POST">
             @csrf
             <div class="form-group">
@@ -45,11 +50,19 @@
                   <input name="password" type="password" class="form-control" placeholder="Password (min. 5 karakter)" required>
                </div>
             </div>
+            <div class="form-group">
+               <div class="input-group flex-nowrap">
+                  <div class="input-group-prepend">
+                     <span  span class="input-group-text"><i class="fas fa-lock"></i></span>
+                  </div>
+                  <input name="password_confirmation" type="password" class="form-control" placeholder="Re-type password" required>
+               </div>
+            </div>
             <div>
                <small style="color: #919191">*dengan ini kamu menyetujui persyaratan dan ketentuan yang berlaku</small>
             </div>
             <hr>
-            <button type="submit" class="btn btn-primary btn-block py-3 rounded-lg">Buat Akun</button>
+            <button type="submit" class="btn btn-primary btn-block py-3 rounded-lg mb-5">Buat Akun</button>
          </form>
       </div>
    </div>

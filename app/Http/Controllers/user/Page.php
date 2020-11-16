@@ -35,7 +35,7 @@ class Page extends Controller
         }
     }
 
-    public function submitorder(Request $request) 
+    public function submitPemesanan(Request $request) 
     {
         try {
             $request->validate([
@@ -61,7 +61,7 @@ class Page extends Controller
       
     }
 
-    public function tentangkami(Request $request) 
+    public function tentangKami(Request $request) 
     {
         if($request->session()->has('id')) {
             $value = $request->session()->get('id');
@@ -85,7 +85,8 @@ class Page extends Controller
         }
     }
 
-    public function notifikasi(Request $request){
+    public function notifikasi(Request $request)
+    {
         if($request->session()->has('id')) {
             $value = $request->session()->get('id');
             $user = User::find($value);

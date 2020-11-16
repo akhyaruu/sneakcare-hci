@@ -7,21 +7,61 @@ use Illuminate\Http\Request;
 
 //--------------custom------------
 use App\Notification;
+use App\User;
 use Illuminate\Support\Facades\DB;
 
 class AdminDashboard extends Controller
 {
-    public function index() {
+    // ------------------------------ view ------------------------------
+    public function index() 
+    {
+        
+    }
+
+    public function loginView() 
+    {
+        
+    }
+
+    public function treatment() 
+    {
+        
+    }
+
+    public function pesanan() 
+    {
         $order = DB::table('orders')
             ->join('treatments', 'orders.id_treatment', '=', 'treatments.id')
             ->join('users', 'orders.id_user', '=', 'users.id')
             ->select('orders.alamat_pengambilan', 'treatments.jenis_treatment', 'users.nama', 'users.id')
             ->get();
 
-        return view('admin_view.dashboard', ['orders' => $order]);
+        return view('admin_view.pesanan', ['orders' => $order]);
     }
 
-    public function konfirmasiPesanan(Request $request) {
+    public function admin() 
+    {
+
+    }
+
+    public function user() 
+    {
+        $users = User::all();
+        return view('admin_view.user', ['users' => $users]);
+    }
+
+
+    // ------------------------------ method ------------------------------
+    public function authenticate() {
+
+    }
+
+    public function forgetSession() {
+
+    }
+
+    public function konfirmasiPesanan(Request $request) 
+    {
         $request->validate([
             'isi_notifikasi' => ['required'],
             'id_user'        => ['required']
@@ -32,4 +72,11 @@ class AdminDashboard extends Controller
         $notification->save();
         return redirect('/dashboard-admin-sneakcare/pesanan')->with('message', 'Pesanan telah dikonfirmasi');
     }
+
+    public function destoryUser(Request $request) {
+        $user = User::find($request->id_user);
+        $user->delete();
+        return redirect('/dashboard-admin-sneakcare/user')->with('message', 'User telah terhapus');
+    }
+
 }

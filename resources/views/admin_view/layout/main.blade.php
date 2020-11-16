@@ -86,29 +86,53 @@
          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-         <li class="nav-item">
-            <a href="" class="nav-link">
-               <i class="nav-icon fas fa-th"></i>
-               <p>
-                  Dashboard
-               </p>
-            </a>
+            <li class="nav-item">
+               <a href="" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                     Dashboard
+                  </p>
+               </a>
             </li>
             <li class="nav-item">
-            <a href="" class="nav-link">
-               <i class="nav-icon fas fa-file-contract"></i>
-               <p>
-                  Pesanan
-               </p>
-            </a>
+               <a href="{{ url('/dashboard-admin-sneakcare/treatment') }}" class="nav-link">
+                  <i class="nav-icon far fa-list-alt"></i>
+                  <p>
+                     Treatments 
+                  </p>
+               </a>
             </li>
             <li class="nav-item">
-            <a href="" class="nav-link">
-               <i class="nav-icon fas fa-sign-out-alt"></i>
-               <p>
-                  Logout 
-               </p>
-            </a>
+               <a href="{{ url('/dashboard-admin-sneakcare/pesanan') }}" class="nav-link">
+                  <i class="nav-icon fas fa-file-contract"></i>
+                  <p>
+                     Pesanan
+                  </p>
+               </a>
+            </li>
+            <li class="nav-item">
+               <a href="{{ url('/dashboard-admin-sneakcare/admin') }}" class="nav-link">
+                  <i class="nav-icon fas fa-user-cog"></i>
+                  <p>
+                     Admin 
+                  </p>
+               </a>
+            </li>
+            <li class="nav-item">
+               <a href="{{ url('/dashboard-admin-sneakcare/user') }}" class="nav-link">
+                  <i class="nav-icon fas fa-user-friends"></i>
+                  <p>
+                     User 
+                  </p>
+               </a>
+            </li>
+            <li class="nav-item">
+               <a href="" class="nav-link">
+                  <i class="nav-icon fas fa-sign-out-alt"></i>
+                  <p>
+                     Logout 
+                  </p>
+               </a>
             </li>
          </ul>
       </nav>
@@ -168,3 +192,4 @@
   {{-- <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script> --}}
   <!-- AdminLTE for demo purposes -->
   {{-- <script src="{{ asset('dist/js/demo.js') }}"></script> --}}
+  @yield('custom-script')
